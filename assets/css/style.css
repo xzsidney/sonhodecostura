@@ -1,0 +1,431 @@
+/* Paleta */
+:root {
+  --rose: #e0b7b4;
+  --mint: #b6cda8;
+  --slate: #505b68;
+  --dark: #1f2327;
+  --light: #f7f8fb;
+}
+
+html,
+body {
+  height: 100%;
+
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background: #fff;
+  /* Changed from light gray to white for a cleaner look */
+  color: #505b68;
+  /* Using Slate for text instead of black/dark gray */
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--slate);
+}
+
+.font-script {
+  font-family: 'Great Vibes', cursive;
+  /* Close alternative to Aaron Script */
+  color: var(--slate);
+}
+
+
+
+/* Container no estilo casa.liraquality (coluna mais estreita) */
+.container-narrow {
+  max-width: 980px;
+}
+
+/* Topbar fininha acima da navbar (linha discreta) */
+.topbar {
+  height: 8px;
+  background: var(--slate);
+}
+
+/* Navbar “flutuante” e translúcida */
+.navbar-floating {
+  position: sticky;
+  top: 0;
+  z-index: 1030;
+  backdrop-filter: saturate(140%) blur(6px);
+  -webkit-backdrop-filter: saturate(140%) blur(6px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.nav-rose {
+  background: rgba(224, 183, 180, 0.92) !important;
+}
+
+.nav-mint {
+  background: rgba(182, 205, 168, 0.92) !important;
+}
+
+.nav-slate {
+  background: rgba(80, 91, 104, 0.95) !important;
+}
+
+.nav-rose .nav-link,
+.nav-mint .nav-link {
+  color: #1a1a1a !important;
+  font-weight: 600;
+}
+
+.nav-slate .nav-link {
+  color: #fff !important;
+  font-weight: 600;
+}
+
+.navbar .nav-link.active {
+  text-decoration: underline;
+}
+
+/* HERO grande com overlay (igual vibe do site de referência) */
+.hero {
+  position: relative;
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  background: url("../img/hero01.png") center/cover no-repeat fixed;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.25));
+}
+
+.hero>.container {
+  position: relative;
+  z-index: 1;
+}
+
+.hero h1,
+.hero p {
+  color: #fff;
+}
+
+/* Seções */
+.section {
+  padding: 56px 0;
+}
+
+.section-muted {
+  background: #fff;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+}
+
+/* Cards suaves */
+.card-soft {
+  border: 0;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-soft:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+}
+
+/* Hover em imagens de produtos */
+.product-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15) !important;
+}
+
+.product-card img {
+  transition: transform 0.5s ease;
+}
+
+.product-card:hover img {
+  transform: scale(1.05);
+}
+
+/* Botões */
+.btn-accent {
+  background: var(--mint);
+  border-color: var(--mint);
+  color: #0f1a1f;
+}
+
+.btn-accent:hover {
+  filter: brightness(0.95);
+}
+
+.btn-primary {
+  background: var(--slate);
+  border-color: var(--slate);
+}
+
+/* Footer compacto */
+.site-footer {
+  padding: 24px 0;
+}
+
+.footer-rose {
+  background: var(--rose);
+  color: #1a1a1a;
+}
+
+.footer-mint {
+  background: var(--mint);
+  color: #1a1a1a;
+}
+
+.footer-slate {
+  background: var(--slate);
+  color: #fff;
+}
+
+.site-footer a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.site-footer a:hover {
+  opacity: 0.85;
+}
+
+/* Utilitários */
+.lead-muted {
+  color: #5d6a76;
+}
+
+/* Navbar */
+header.site-header,
+.elementor-location-header {
+  background-color: #505b68 !important;
+  /* troque por #E0B7B4 ou #B6CDA8 */
+}
+
+.elementor-location-header a {
+  color: #fff !important;
+  font-weight: 600;
+}
+
+/* Footer */
+footer.site-footer,
+.elementor-location-footer {
+  background-color: #505b68 !important;
+  color: #fff !important;
+}
+
+.elementor-location-footer a {
+  color: #fff !important;
+}
+
+/*  Sessão sobre*/
+/* Cores úteis já existentes */
+.text-slate {
+  color: var(--slate);
+}
+
+/* Section inspirada no card enviado */
+.about-brand {
+  background: #fff;
+}
+
+.about-brand .about-photo img {
+  display: block;
+  object-fit: cover;
+  height: auto;
+}
+
+/* Cartão de serviços com a paleta */
+.services-card {
+  background: var(--mint);
+  /* #B6CDA8 */
+  color: #0f1a1f;
+  border: 2px solid rgba(0, 0, 0, 0.06);
+}
+
+/* Opcional: título script com leve sombra */
+.script.text-slate {
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+
+/* Responsividade */
+@media (max-width: 991px) {
+  .about-brand .script {
+    font-size: 1.9rem;
+  }
+}
+
+/* Altura padronizada para todos os produtos (desktop) */
+:root {
+  --prod-h: 360px;
+}
+
+/* ajuste p/ 340–400px se precisar */
+
+/* espaçamento entre uma seção e outra */
+.product-line {
+  margin: 22px 0;
+  /* evita “tudo grudado” */
+}
+
+/* “Card” do produto */
+.product-row {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  /* 33% imagem / 67% texto */
+  min-height: var(--prod-h);
+  /* <-- todos com a mesma altura */
+}
+
+.product-row {
+  display: flex;
+  align-items: stretch;
+}
+
+.product-row>[class^="col-"],
+.product-row>[class*=" col-"] {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+/* Coluna da imagem */
+.product-media {
+  overflow: hidden;
+  /* corta só a imagem nas bordas arredondadas */
+  border-radius: 16px 0 0 16px;
+  padding: 0 !important;
+}
+
+.product-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+/* Coluna do conteúdo */
+.product-content {
+  display: flex;
+  flex-direction: column;
+  padding: 22px 24px;
+  min-width: 0;
+}
+
+/* Espaçamentos internos para não “grudar” */
+.product-content h5 {
+  margin-bottom: 0.35rem;
+}
+
+.product-content p {
+  margin-bottom: 0.5rem;
+}
+
+.product-content ul {
+  margin-bottom: 1rem;
+}
+
+/* Botão sempre aparece no fim da coluna */
+.product-content .btn {
+  margin-top: auto;
+  /* empurra o botão para a base */
+  align-self: flex-start;
+}
+
+/* MOBILE: empilha e padroniza a altura da foto */
+@media (max-width: 767.98px) {
+  .product-row {
+    grid-template-columns: 1fr;
+    min-height: unset;
+    /* libera a altura no mobile */
+  }
+
+  .product-media {
+    border-radius: 16px 16px 0 0;
+    height: 220px;
+    /* altura igual das fotos empilhadas */
+  }
+
+  .product-media img {
+    height: 100%;
+  }
+}
+
+/*  pagina sobre nos*/
+
+.about-section {
+  background: linear-gradient(to right, var(--slate), var(--rose), var(--mint));
+  color: #fff;
+}
+
+.dream-section,
+.dream-section * {
+  font-family: "Montserrat", sans-serif !important;
+  /* força Montserrat na faixa */
+}
+
+.dream-section h2 {
+  font-weight: 800;
+  /* igual ao fw extra-bold */
+  line-height: 1.2;
+  margin: 0;
+}
+
+.dream-section {
+  background: linear-gradient(to right, var(--slate), var(--rose), var(--mint));
+  min-height: 300px;
+  color: #fff;
+}
+
+
+.product-creation {
+  background: linear-gradient(to right, var(--slate), var(--rose), var(--mint));
+  color: #fff;
+}
+
+.product-creation h2 {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.product-creation p {
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+/* Refinements based on Visual Identity Guide */
+.btn-accent {
+  background: var(--mint) !important;
+  color: #fff !important;
+  border-radius: 50px !important;
+  font-weight: 600 !important;
+  padding: 10px 24px !important;
+  border: none !important;
+}
+.btn-accent:hover {
+  filter: brightness(0.95);
+  transform: translateY(-2px);
+}
+.nav-link {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+}
+h1, h2, h3, .display-1, .display-2, .display-3, .display-4, .display-5, .display-6 {
+    color: var(--slate) !important;
+}
+
+/* Fix Hero Text Color */
+.hero h1, .hero p, .hero .lead, .hero .display-3 {
+    color: #ffffff !important;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
