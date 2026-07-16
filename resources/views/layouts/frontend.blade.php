@@ -31,8 +31,17 @@
                         <a class="nav-link" href="{{ url('/') }}">Início</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#colecao">Nossa Coleção</a>
+                        <a class="nav-link" href="{{ url('/#colecao') }}">Nossa Coleção</a>
                     </li>
+                    @guest
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('login') }}">Entrar</a>
+                    </li>
+                    @else
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url('/dashboard') }}">Painel</a>
+                    </li>
+                    @endguest
                     <li class="nav-item ms-lg-3">
                         <a class="btn btn-primary-custom rounded-pill px-4" href="https://wa.me/5511985497329" target="_blank">Faça seu Orçamento</a>
                     </li>

@@ -1,80 +1,58 @@
 <x-guest-layout>
+    <div class="text-center mb-4">
+        <h4 class="fw-bold text-slate">Crie sua conta</h4>
+        <p class="text-muted small">Faça parte do Sonho de Costura</p>
+    </div>
+
     <form method="POST" action="{{ route('register') }}">
         @csrf
 
         <!-- Name -->
-        <div>
-            <x-input-label for="name" value="Nome Completo" />
-            <x-text-input id="name" class="block mt-1 w-full border-gray-300 focus:border-peach focus:ring-peach rounded-md shadow-sm" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
-            <x-input-error :messages="$errors->get('name')" class="mt-2" />
+        <div class="mb-3">
+            <label for="name" class="form-label fw-medium text-dark">Nome Completo</label>
+            <input id="name" class="form-control form-control-lg @error('name') is-invalid @enderror" type="text" name="name" value="{{ old('name') }}" required autofocus autocomplete="name">
+            @error('name')
+                <div class="invalid-feedback">{{ $message }}</div>
+            @enderror
         </div>
 
         <!-- Email Address -->
-        <div class="mt-4">
-            <x-input-label for="email" value="E-mail" />
-            <x-text-input id="email" class="block mt-1 w-full border-gray-300 focus:border-peach focus:ring-peach rounded-md shadow-sm" type="email" name="email" :value="old('email')" required autocomplete="username" />
-            <x-input-error :messages="$errors->get('email')" class="mt-2" />
-        </div>
-
-        <!-- Phone (WhatsApp) -->
-        <div class="mt-4">
-            <x-input-label for="phone" value="Telefone / WhatsApp" />
-            <x-text-input id="phone" class="block mt-1 w-full border-gray-300 focus:border-peach focus:ring-peach rounded-md shadow-sm" type="text" name="phone" :value="old('phone')" required />
-            <x-input-error :messages="$errors->get('phone')" class="mt-2" />
-        </div>
-
-        <!-- Registration Address -->
-        <div class="mt-4">
-            <x-input-label for="registration_address" value="Endereço de Cadastro (Rua, Número, Bairro, CEP, Cidade-UF)" />
-            <x-text-input id="registration_address" class="block mt-1 w-full border-gray-300 focus:border-peach focus:ring-peach rounded-md shadow-sm" type="text" name="registration_address" :value="old('registration_address')" required />
-            <x-input-error :messages="$errors->get('registration_address')" class="mt-2" />
-        </div>
-
-        <!-- Shipping Address -->
-        <div class="mt-4">
-            <x-input-label for="shipping_address" value="Endereço de Entrega (Se for diferente)" />
-            <x-text-input id="shipping_address" class="block mt-1 w-full border-gray-300 focus:border-peach focus:ring-peach rounded-md shadow-sm" type="text" name="shipping_address" :value="old('shipping_address')" required />
-            <x-input-error :messages="$errors->get('shipping_address')" class="mt-2" />
-        </div>
-
-        <!-- Billing Address -->
-        <div class="mt-4">
-            <x-input-label for="billing_address" value="Endereço de Cobrança (Se for diferente)" />
-            <x-text-input id="billing_address" class="block mt-1 w-full border-gray-300 focus:border-peach focus:ring-peach rounded-md shadow-sm" type="text" name="billing_address" :value="old('billing_address')" required />
-            <x-input-error :messages="$errors->get('billing_address')" class="mt-2" />
+        <div class="mb-3">
+            <label for="email" class="form-label fw-medium text-dark">E-mail</label>
+            <input id="email" class="form-control form-control-lg @error('email') is-invalid @enderror" type="email" name="email" value="{{ old('email') }}" required autocomplete="username">
+            @error('email')
+                <div class="invalid-feedback">{{ $message }}</div>
+            @enderror
         </div>
 
         <!-- Password -->
-        <div class="mt-4">
-            <x-input-label for="password" :value="__('Password')" />
-
-            <x-text-input id="password" class="block mt-1 w-full"
-                            type="password"
-                            name="password"
-                            required autocomplete="new-password" />
-
-            <x-input-error :messages="$errors->get('password')" class="mt-2" />
+        <div class="mb-3">
+            <label for="password" class="form-label fw-medium text-dark">Senha</label>
+            <input id="password" class="form-control form-control-lg @error('password') is-invalid @enderror" type="password" name="password" required autocomplete="new-password">
+            @error('password')
+                <div class="invalid-feedback">{{ $message }}</div>
+            @enderror
         </div>
 
         <!-- Confirm Password -->
-        <div class="mt-4">
-            <x-input-label for="password_confirmation" :value="__('Confirm Password')" />
-
-            <x-text-input id="password_confirmation" class="block mt-1 w-full"
-                            type="password"
-                            name="password_confirmation" required autocomplete="new-password" />
-
-            <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
+        <div class="mb-4">
+            <label for="password_confirmation" class="form-label fw-medium text-dark">Confirmar Senha</label>
+            <input id="password_confirmation" class="form-control form-control-lg @error('password_confirmation') is-invalid @enderror" type="password" name="password_confirmation" required autocomplete="new-password">
+            @error('password_confirmation')
+                <div class="invalid-feedback">{{ $message }}</div>
+            @enderror
         </div>
 
-        <div class="flex items-center justify-end mt-4">
-            <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('login') }}">
-                {{ __('Already registered?') }}
-            </a>
+        <div class="d-grid gap-2">
+            <button type="submit" class="btn btn-primary-custom btn-lg rounded-pill">
+                Cadastrar
+            </button>
+        </div>
 
-            <x-primary-button class="ms-4">
-                {{ __('Register') }}
-            </x-primary-button>
+        <div class="mt-4 text-center">
+            <p class="small text-muted">
+                Já tem uma conta? <a href="{{ route('login') }}" class="text-peach fw-medium text-decoration-none">Faça login</a>
+            </p>
         </div>
     </form>
 </x-guest-layout>
