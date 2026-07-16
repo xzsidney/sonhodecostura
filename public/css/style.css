@@ -1,0 +1,94 @@
+/* Paleta de Cores Oficiais - Sonho de Costura */
+:root {
+    --color-slate: #505B68; /* Azul Ardósia / Chumbo */
+    --color-peach: #E0B7B4; /* Rosa Pêssego / Salmão */
+    --color-mint:  #B6CDA8; /* Verde Suave / Menta */
+    
+    /* Cores de apoio */
+    --color-light: #F9F9FA;
+    --color-dark: #333A42;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--color-light);
+    color: var(--color-dark);
+}
+
+/* Tipografia Especial */
+.font-script {
+    font-family: 'Great Vibes', cursive; /* Fallback para Aaron Script */
+}
+
+/* Classes Utilitárias Customizadas */
+.text-slate { color: var(--color-slate) !important; }
+.text-peach { color: var(--color-peach) !important; }
+.text-mint  { color: var(--color-mint) !important; }
+
+.bg-slate { background-color: var(--color-slate) !important; }
+.bg-peach { background-color: var(--color-peach) !important; }
+.bg-mint  { background-color: var(--color-mint) !important; }
+
+/* Botões Customizados */
+.btn-primary-custom {
+    background-color: var(--color-peach);
+    border-color: var(--color-peach);
+    color: #fff;
+    font-weight: 600;
+    border-radius: 50px;
+    padding: 10px 24px;
+    transition: all 0.3s ease;
+}
+
+.btn-primary-custom:hover {
+    background-color: var(--color-slate);
+    border-color: var(--color-slate);
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(80, 91, 104, 0.2);
+}
+
+.btn-outline-slate {
+    color: var(--color-slate);
+    border: 2px solid var(--color-slate);
+    border-radius: 50px;
+    font-weight: 600;
+}
+.btn-outline-slate:hover {
+    background-color: var(--color-slate);
+    color: #fff;
+}
+
+/* Navbar */
+.navbar-custom {
+    background-color: rgba(255, 255, 255, 0.95);
+    border-bottom: 1px solid rgba(80, 91, 104, 0.1);
+}
+
+/* Cartões de Produto (Cards) */
+.product-card {
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+    overflow: hidden;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+}
+
+.hero-section {
+    position: relative;
+    padding: 120px 0;
+    background-color: var(--color-mint);
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255,255,255, 0.8);
+}
