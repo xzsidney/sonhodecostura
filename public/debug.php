@@ -8,6 +8,16 @@ echo "<h2>Checagem de Permissoes</h2>";
 echo "Storage: " . (is_writable(__DIR__.'/../storage') ? 'OK' : 'FALHOU') . "<br>";
 echo "Bootstrap/Cache: " . (is_writable(__DIR__.'/../bootstrap/cache') ? 'OK' : 'FALHOU') . "<br>";
 
+echo "<h2>Limpando Cache Corrompido da Hostinger...</h2>";
+$files = glob(__DIR__.'/../bootstrap/cache/*.php');
+foreach($files as $file) {
+    if(is_file($file)) {
+        unlink($file);
+        echo "Apagado: " . basename($file) . "<br>";
+    }
+}
+echo "Cache limpo com sucesso!<br>";
+
 echo "<h2>Checagem de .env</h2>";
 echo ".env existe? " . (file_exists(__DIR__.'/../.env') ? 'SIM' : 'NAO') . "<br>";
 
