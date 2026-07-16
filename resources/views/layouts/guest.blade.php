@@ -15,23 +15,170 @@
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     
+    <!-- Font Awesome (for icons) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
     <!-- Custom CSS -->
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
-</head>
-<body style="background-color: var(--color-mint); min-height: 100vh; display: flex; flex-direction: column;">
     
-    <div class="flex-grow-1 d-flex flex-column justify-content-center align-items-center py-5">
+    <style>
+        .auth-split-container {
+            min-height: 100vh;
+            display: flex;
+            background-color: #FDFDFC;
+        }
         
-        <!-- Logo -->
-        <div class="mb-4 text-center">
-            <a href="{{ url('/') }}" class="text-decoration-none">
-                <span class="font-script text-peach" style="font-size: 3rem;">Sonho de Costura</span>
-            </a>
-        </div>
+        .auth-image-side {
+            flex: 1;
+            background-image: url('{{ asset('images/hero_banner.png') }}');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            display: none;
+        }
+        
+        @media (min-width: 992px) {
+            .auth-image-side {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+        
+        .auth-image-overlay {
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-color: rgba(255, 250, 246, 0.85); /* Light peach overlay to match mockup */
+            z-index: 1;
+        }
+        
+        .auth-image-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            padding: 3rem;
+            max-width: 500px;
+        }
+        
+        .auth-form-side {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+            background-color: #FAF8F5; /* Very soft warm background matching the mockup */
+        }
+        
+        .auth-form-container {
+            width: 100%;
+            max-width: 420px;
+            background: white;
+            padding: 3rem 2.5rem;
+            border-radius: 24px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.03);
+        }
+        
+        .auth-input {
+            border: 1px solid #E5E0DA;
+            border-radius: 12px;
+            padding: 0.8rem 1rem;
+            font-size: 0.95rem;
+            background-color: #FCFBFA;
+            color: #4A4A4A;
+        }
+        
+        .auth-input:focus {
+            border-color: #D3A79E;
+            box-shadow: 0 0 0 0.25rem rgba(211, 167, 158, 0.2);
+            background-color: white;
+        }
+        
+        .auth-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #8C8C8C;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        
+        .auth-btn {
+            background-color: #D3A79E;
+            color: white;
+            border-radius: 12px;
+            padding: 0.8rem;
+            font-weight: 600;
+            border: none;
+            transition: all 0.3s;
+        }
+        
+        .auth-btn:hover {
+            background-color: #c4968d;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(211, 167, 158, 0.4);
+        }
+        
+        .auth-footer-link {
+            color: #8C8C8C;
+            font-size: 0.9rem;
+            text-decoration: none;
+        }
+        
+        .auth-footer-link span {
+            color: #D3A79E;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
 
-        <!-- Auth Card -->
-        <div class="bg-white p-5 rounded-4 shadow-lg w-100" style="max-width: 450px;">
-            {{ $slot }}
+    <div class="auth-split-container">
+        
+        <!-- Left Side: Image & Branding -->
+        <div class="auth-image-side">
+            <div class="auth-image-overlay"></div>
+            <div class="auth-image-content">
+                <div class="bg-white p-4 rounded-4 shadow-sm d-inline-block mb-4">
+                    <img src="{{ asset('images/LOGO_FULLHD.png') }}" alt="Sonho de Costura" class="img-fluid" style="max-height: 120px;">
+                </div>
+                <h2 class="font-script" style="color: #6C5B52; font-size: 3.5rem;">Costura Criativa</h2>
+                <p class="text-muted mt-3" style="font-size: 1.1rem; line-height: 1.6;">
+                    Nossa missão é transformar tecidos e linhas em peças únicas que contam histórias. Entre no nosso ateliê e comece sua jornada artesanal hoje mesmo.
+                </p>
+                <div class="mt-4 text-muted d-flex justify-content-center gap-4 fs-4">
+                    <i class="fas fa-drafting-compass"></i>
+                    <i class="fas fa-cut"></i>
+                    <i class="fas fa-palette"></i>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Right Side: Form -->
+        <div class="auth-form-side">
+            
+            <!-- Mobile Logo (shows only on small screens) -->
+            <div class="d-lg-none mb-4 text-center">
+                <img src="{{ asset('images/LOGO_FULLHD.png') }}" alt="Sonho de Costura" style="max-height: 80px;">
+            </div>
+            
+            <div class="auth-form-container">
+                {{ $slot }}
+            </div>
+            
+            <!-- Footer -->
+            <div class="mt-5 text-center" style="max-width: 400px;">
+                <h3 class="font-script fs-3 text-slate mb-3">Sonho de Costura</h3>
+                <p class="small text-muted mb-2">
+                    &copy; {{ date('Y') }} Sonho de Costura. Nossa missão é transformar tecidos e linhas em peças únicas que contam histórias.
+                </p>
+                <div class="d-flex justify-content-center gap-3 small text-muted mt-3">
+                    <a href="#" class="text-muted text-decoration-none hover-peach">Privacidade</a>
+                    <a href="#" class="text-muted text-decoration-none hover-peach">Termos de Uso</a>
+                    <a href="#" class="text-muted text-decoration-none hover-peach">Contato</a>
+                </div>
+            </div>
         </div>
         
     </div>

@@ -1,7 +1,7 @@
 <x-guest-layout>
     <div class="text-center mb-4">
-        <h4 class="fw-bold text-slate">Crie sua conta</h4>
-        <p class="text-muted small">Faça parte do Sonho de Costura</p>
+        <h3 class="font-script fs-1 text-slate" style="color: #6C5B52;">Crie sua conta</h3>
+        <p class="auth-label mt-2">Faça parte do Sonho de Costura</p>
     </div>
 
     <form method="POST" action="{{ route('register') }}">
@@ -9,8 +9,8 @@
 
         <!-- Name -->
         <div class="mb-3">
-            <label for="name" class="form-label fw-medium text-dark">Nome Completo</label>
-            <input id="name" class="form-control form-control-lg @error('name') is-invalid @enderror" type="text" name="name" value="{{ old('name') }}" required autofocus autocomplete="name">
+            <label for="name" class="auth-label">Nome Completo</label>
+            <input id="name" class="form-control auth-input @error('name') is-invalid @enderror" type="text" name="name" value="{{ old('name') }}" placeholder="Seu nome completo" required autofocus autocomplete="name">
             @error('name')
                 <div class="invalid-feedback">{{ $message }}</div>
             @enderror
@@ -18,41 +18,68 @@
 
         <!-- Email Address -->
         <div class="mb-3">
-            <label for="email" class="form-label fw-medium text-dark">E-mail</label>
-            <input id="email" class="form-control form-control-lg @error('email') is-invalid @enderror" type="email" name="email" value="{{ old('email') }}" required autocomplete="username">
+            <label for="email" class="auth-label">E-mail</label>
+            <input id="email" class="form-control auth-input @error('email') is-invalid @enderror" type="email" name="email" value="{{ old('email') }}" placeholder="exemplo@email.com" required autocomplete="username">
             @error('email')
                 <div class="invalid-feedback">{{ $message }}</div>
             @enderror
         </div>
 
         <!-- Password -->
-        <div class="mb-3">
-            <label for="password" class="form-label fw-medium text-dark">Senha</label>
-            <input id="password" class="form-control form-control-lg @error('password') is-invalid @enderror" type="password" name="password" required autocomplete="new-password">
+        <div class="mb-3 position-relative">
+            <label for="password" class="auth-label">Senha</label>
+            <div class="input-group">
+                <input id="password" class="form-control auth-input @error('password') is-invalid @enderror" type="password" name="password" required autocomplete="new-password">
+                <span class="input-group-text bg-transparent border-0 position-absolute end-0 top-50 translate-middle-y z-3 me-2" style="cursor: pointer;" onclick="togglePassword('password')">
+                    <i class="fas fa-eye text-muted"></i>
+                </span>
+            </div>
             @error('password')
-                <div class="invalid-feedback">{{ $message }}</div>
+                <div class="invalid-feedback d-block mt-1">{{ $message }}</div>
             @enderror
         </div>
 
         <!-- Confirm Password -->
-        <div class="mb-4">
-            <label for="password_confirmation" class="form-label fw-medium text-dark">Confirmar Senha</label>
-            <input id="password_confirmation" class="form-control form-control-lg @error('password_confirmation') is-invalid @enderror" type="password" name="password_confirmation" required autocomplete="new-password">
+        <div class="mb-4 position-relative">
+            <label for="password_confirmation" class="auth-label">Confirmar Senha</label>
+            <div class="input-group">
+                <input id="password_confirmation" class="form-control auth-input @error('password_confirmation') is-invalid @enderror" type="password" name="password_confirmation" required autocomplete="new-password">
+                <span class="input-group-text bg-transparent border-0 position-absolute end-0 top-50 translate-middle-y z-3 me-2" style="cursor: pointer;" onclick="togglePassword('password_confirmation')">
+                    <i class="fas fa-eye text-muted"></i>
+                </span>
+            </div>
             @error('password_confirmation')
-                <div class="invalid-feedback">{{ $message }}</div>
+                <div class="invalid-feedback d-block mt-1">{{ $message }}</div>
             @enderror
         </div>
 
-        <div class="d-grid gap-2">
-            <button type="submit" class="btn btn-primary-custom btn-lg rounded-pill">
+        <div class="d-grid mt-4">
+            <button type="submit" class="auth-btn">
                 Cadastrar
             </button>
         </div>
 
         <div class="mt-4 text-center">
-            <p class="small text-muted">
-                Já tem uma conta? <a href="{{ route('login') }}" class="text-peach fw-medium text-decoration-none">Faça login</a>
-            </p>
+            <a href="{{ route('login') }}" class="auth-footer-link">
+                Já tem uma conta? <span>Faça login</span>
+            </a>
         </div>
     </form>
+
+    <script>
+        function togglePassword(inputId) {
+            const input = document.getElementById(inputId);
+            const icon = input.nextElementSibling.querySelector('i');
+            
+            if (input.type === 'password') {
+                input.type = 'text';
+                icon.classList.remove('fa-eye');
+                icon.classList.add('fa-eye-slash');
+            } else {
+                input.type = 'password';
+                icon.classList.remove('fa-eye-slash');
+                icon.classList.add('fa-eye');
+            }
+        }
+    </script>
 </x-guest-layout>
