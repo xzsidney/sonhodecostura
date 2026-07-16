@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
@@ -28,13 +28,13 @@
             <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                 <ul class="navbar-nav align-items-center gap-3">
                     <li class="nav-item">
-                        <a class="nav-link fw-medium" href="{{ url('/') }}">In├¡cio</a>
+                        <a class="nav-link" href="{{ url('/') }}">Início</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link fw-medium" href="#colecao">Nossa Cole├º├úo</a>
+                        <a class="nav-link" href="#colecao">Nossa Coleção</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="btn btn-primary-custom" href="https://wa.me/5511985497329?text=Ol├í, vim pelo site e gostaria de solicitar um or├ºamento." target="_blank">Fa├ºa seu Or├ºamento</a>
+                    <li class="nav-item ms-lg-3">
+                        <a class="btn btn-primary-custom rounded-pill px-4" href="https://wa.me/5511985497329" target="_blank">Faça seu Orçamento</a>
                     </li>
                 </ul>
             </div>
@@ -52,7 +52,7 @@
             <div class="row g-4">
                 <div class="col-md-6">
                     <h3 class="font-script fs-1 text-peach">Sonho de Costura</h3>
-                    <p class="mb-0">Costurando sonhos e transformando em felicidade. Pe├ºas artesanais e exclusivas.</p>
+                    <p class="mb-0">Costurando sonhos e transformando em felicidade. Peças artesanais e exclusivas.</p>
                 </div>
                 <div class="col-md-6 text-md-end">
                     <p class="mb-1"><strong>Atendimento:</strong></p>

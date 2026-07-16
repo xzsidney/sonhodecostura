@@ -1,6 +1,6 @@
-﻿@extends('layouts.frontend')
+@extends('layouts.frontend')
 
-@section('title', 'InÃ­cio')
+@section('title', 'Início')
 
 @section('content')
 
@@ -10,11 +10,11 @@
     <div class="container position-relative z-1" style="z-index: 2 !important;">
         <div class="glass-box mx-auto" style="max-width: 800px;">
             <span class="text-mint fw-bold tracking-widest text-uppercase mb-3 d-block" style="letter-spacing: 2px;">Costura Criativa e Exclusiva</span>
-            <h1 class="display-4 fw-bold text-slate mb-4">AcessÃ³rios desenhados especialmente para vocÃª.</h1>
+            <h1 class="display-4 fw-bold text-slate mb-4">Acessórios desenhados especialmente para você.</h1>
             <p class="lead text-dark mb-5 mx-auto">
-                Bolsas, nÃ©cessaires e kits estruturados com bordados personalizados de alto padrÃ£o.
+                Bolsas, nécessaires e kits estruturados com bordados personalizados de alto padrão.
             </p>
-            <a href="#colecao" class="btn btn-primary-custom btn-lg px-5 py-3">Explorar ColeÃ§Ã£o</a>
+            <a href="#colecao" class="btn btn-primary-custom btn-lg px-5 py-3">Explorar Coleção</a>
         </div>
     </div>
 </section>
@@ -28,24 +28,30 @@
                     <img src="{{ asset('images/hero_banner.png') }}" class="w-100 h-100 object-fit-cover" alt="Nosso Processo de Costura">
                 </div>
             </div>
-            <div class="col-lg-6 ps-lg-5">
-                <h2 class="font-script display-4 text-peach mb-2">Feito Ã  mÃ£o com amor</h2>
-                <h3 class="fw-bold text-slate mb-4 fs-1">AtenÃ§Ã£o em cada detalhe</h3>
-                <p class="text-muted mb-4 fs-5" style="line-height: 1.8;">
-                    Nossa missÃ£o Ã© transformar tecidos e linhas em peÃ§as Ãºnicas que contam histÃ³rias. Desde a escolha cuidadosa dos materiais atÃ© o bordado computadorizado impecÃ¡vel, tudo Ã© feito para garantir que vocÃª tenha uma peÃ§a luxuosa, durÃ¡vel e com a sua identidade.
+            <div class="col-lg-6">
+                <span class="font-script fs-1 text-peach mb-2 d-block">Feito à mão com amor</span>
+                <h2 class="fw-bold text-slate mb-4 display-6">Atenção em cada detalhe</h2>
+                <p class="text-muted fs-5 mb-4">
+                    Nossa missão é transformar tecidos e linhas em peças únicas que contam histórias. Desde a escolha cuidadosa dos materiais até o bordado computadorizado impecável, tudo é feito para garantir que você tenha uma peça luxuosa, durável e com a sua identidade.
                 </p>
                 <ul class="list-unstyled mb-0">
-                    <li class="mb-3 d-flex align-items-center fs-5">
-                        <span class="bg-peach text-white rounded-circle me-3 d-flex align-items-center justify-content-center shadow-sm flex-shrink-0" style="width: 32px; height: 32px;">âœ“</span>
-                        <span class="text-slate">Bordados Computadorizados Precisos</span>
+                    <li class="mb-3 d-flex align-items-center">
+                        <div class="bg-peach text-white rounded-circle p-2 me-3 d-flex align-items-center justify-content-center" style="width: 32px; height: 32px;">
+                            <i class="fas fa-check small"></i>
+                        </div>
+                        <span class="fs-5 text-dark">Bordados Computadorizados Precisos</span>
                     </li>
-                    <li class="mb-3 d-flex align-items-center fs-5">
-                        <span class="bg-peach text-white rounded-circle me-3 d-flex align-items-center justify-content-center shadow-sm flex-shrink-0" style="width: 32px; height: 32px;">âœ“</span>
-                        <span class="text-slate">EstruturaÃ§Ã£o Firme e Acabamento Premium</span>
+                    <li class="mb-3 d-flex align-items-center">
+                        <div class="bg-peach text-white rounded-circle p-2 me-3 d-flex align-items-center justify-content-center" style="width: 32px; height: 32px;">
+                            <i class="fas fa-check small"></i>
+                        </div>
+                        <span class="fs-5 text-dark">Estruturação Firme e Acabamento Premium</span>
                     </li>
-                    <li class="d-flex align-items-center fs-5">
-                        <span class="bg-peach text-white rounded-circle me-3 d-flex align-items-center justify-content-center shadow-sm flex-shrink-0" style="width: 32px; height: 32px;">âœ“</span>
-                        <span class="text-slate">PersonalizaÃ§Ã£o de Nomes e Temas</span>
+                    <li class="d-flex align-items-center">
+                        <div class="bg-peach text-white rounded-circle p-2 me-3 d-flex align-items-center justify-content-center" style="width: 32px; height: 32px;">
+                            <i class="fas fa-check small"></i>
+                        </div>
+                        <span class="fs-5 text-dark">Personalização de Nomes e Temas</span>
                     </li>
                 </ul>
             </div>
@@ -53,40 +59,57 @@
     </div>
 </section>
 
-<!-- Collection Section (Vitrine) -->
-<section id="colecao" class="py-5" style="background-color: #fff;">
+<!-- Collection Section -->
+<section id="colecao" class="py-5 bg-white">
     <div class="container py-5">
         <div class="text-center mb-5">
-            <h2 class="font-script text-peach display-5 mb-0">Nossa ColeÃ§Ã£o</h2>
-            <h3 class="fw-bold text-slate fs-2">PeÃ§as mais pedidas</h3>
-            <p class="text-muted mt-3">Explore o que hÃ¡ de mais luxuoso e exclusivo no ateliÃª.</p>
+            <span class="font-script fs-1 text-peach mb-2 d-block">Nossa Coleção</span>
+            <h2 class="fw-bold text-slate display-6">Peças mais pedidas</h2>
+            <p class="text-muted mx-auto" style="max-width: 600px;">Explore o que há de mais luxuoso e exclusivo no ateliê.</p>
         </div>
-
-        <div class="row g-5 justify-content-center">
+        
+        <div class="row g-4">
             <!-- Product 1 -->
-            <div class="col-md-5 col-lg-4">
-                <div class="product-card card h-100">
-                    <div style="height: 300px; background-color: var(--color-light); padding: 10px;">
-                        <img src="{{ asset('images/bag.png') }}" class="card-img-top h-100 w-100 object-fit-cover rounded-3" alt="Bolsa Maternidade">
+            <div class="col-md-4">
+                <div class="product-card h-100 shadow-sm border-0 bg-white">
+                    <div class="position-relative overflow-hidden" style="height: 300px;">
+                        <img src="{{ asset('images/product_maternity_bag.png') }}" class="w-100 h-100 object-fit-cover transition-transform" alt="Bolsa Maternidade">
+                        <div class="position-absolute top-0 end-0 m-3">
+                            <span class="badge bg-mint px-3 py-2 rounded-pill">Mais Vendido</span>
+                        </div>
                     </div>
                     <div class="card-body p-4 text-center">
-                        <h5 class="fw-bold text-slate mb-2 fs-4">Bolsa Maternidade</h5>
-                        <p class="text-muted mb-4">EspaÃ§osa, tÃ©rmica e estruturada. Ideal para o dia a dia da mamÃ£e com muito luxo.</p>
-                        <a href="https://wa.me/5511985497329?text=OlÃ¡, tenho interesse em uma Bolsa Maternidade luxuosa." target="_blank" class="btn btn-outline-slate w-100 py-2">Solicitar OrÃ§amento</a>
+                        <h4 class="card-title fw-bold text-slate mb-2">Bolsa Maternidade Luxo</h4>
+                        <p class="card-text text-muted mb-4">Espaçosa, estruturada e térmica. Perfeita para os primeiros dias do bebê.</p>
+                        <a href="https://wa.me/5511985497329" target="_blank" class="btn btn-outline-peach rounded-pill px-4 py-2 w-100">Solicitar Orçamento</a>
                     </div>
                 </div>
             </div>
-
+            
             <!-- Product 2 -->
-            <div class="col-md-5 col-lg-4">
-                <div class="product-card card h-100">
-                    <div style="height: 300px; background-color: var(--color-light); padding: 10px;">
-                        <img src="{{ asset('images/necessaire.png') }}" class="card-img-top h-100 w-100 object-fit-cover rounded-3" alt="NÃ©cessaire Personalizada">
+            <div class="col-md-4">
+                <div class="product-card h-100 shadow-sm border-0 bg-white">
+                    <div class="position-relative overflow-hidden" style="height: 300px;">
+                        <img src="{{ asset('images/product_necessaire.png') }}" class="w-100 h-100 object-fit-cover transition-transform" alt="Nécessaire Box">
                     </div>
                     <div class="card-body p-4 text-center">
-                        <h5 class="fw-bold text-slate mb-2 fs-4">NÃ©cessaire Box</h5>
-                        <p class="text-muted mb-4">Bordado exclusivo com inicial ou nome. Perfeita para organizar e presentear.</p>
-                        <a href="https://wa.me/5511985497329?text=OlÃ¡, tenho interesse em uma NÃ©cessaire Box Personalizada." target="_blank" class="btn btn-outline-slate w-100 py-2">Solicitar OrÃ§amento</a>
+                        <h4 class="card-title fw-bold text-slate mb-2">Nécessaire Box Personalizada</h4>
+                        <p class="card-text text-muted mb-4">Prática e elegante para organizar maquiagens ou itens do dia a dia.</p>
+                        <a href="https://wa.me/5511985497329" target="_blank" class="btn btn-outline-peach rounded-pill px-4 py-2 w-100">Solicitar Orçamento</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Product 3 -->
+            <div class="col-md-4">
+                <div class="product-card h-100 shadow-sm border-0 bg-white">
+                    <div class="position-relative overflow-hidden" style="height: 300px;">
+                        <img src="{{ asset('images/product_maternity_bag.png') }}" class="w-100 h-100 object-fit-cover transition-transform" alt="Kit Viagem" style="filter: brightness(0.9);">
+                    </div>
+                    <div class="card-body p-4 text-center">
+                        <h4 class="card-title fw-bold text-slate mb-2">Kit Viagem Completo</h4>
+                        <p class="card-text text-muted mb-4">Conjunto com bolsa de ombro e nécessaire combinando com suas iniciais.</p>
+                        <a href="https://wa.me/5511985497329" target="_blank" class="btn btn-outline-peach rounded-pill px-4 py-2 w-100">Solicitar Orçamento</a>
                     </div>
                 </div>
             </div>
@@ -95,15 +118,18 @@
 </section>
 
 <!-- Call to Action -->
-<section class="py-5 bg-slate text-white text-center position-relative overflow-hidden">
-    <div class="position-absolute w-100 h-100" style="top: 0; left: 0; background-color: var(--color-slate); opacity: 0.9; z-index: 0;"></div>
-    <div class="container py-5 position-relative z-1">
-        <h2 class="font-script text-peach display-4 mb-3">Pronto para criar o presente perfeito?</h2>
-        <p class="lead mb-5 text-light mx-auto" style="max-width: 600px;">
-            Fale conosco diretamente no WhatsApp e comece a desenhar uma peÃ§a tÃ£o Ãºnica quanto a pessoa que vai recebÃª-la.
+<section class="py-5" style="background-color: var(--color-mint);">
+    <div class="container py-5 text-center">
+        <h2 class="fw-bold text-slate mb-4">Pronta para ter uma peça única?</h2>
+        <p class="lead text-dark mb-5 mx-auto" style="max-width: 700px;">
+            Trabalhamos com vagas limitadas por mês para garantir o padrão de excelência em cada costura. Faça seu orçamento pelo WhatsApp!
         </p>
-        <a href="https://wa.me/5511985497329?text=OlÃ¡, vim pelo site e gostaria de criar uma peÃ§a exclusiva." target="_blank" class="btn btn-primary-custom btn-lg px-5 shadow-lg">Chamar no WhatsApp</a>
+        <a href="https://wa.me/5511985497329" target="_blank" class="btn btn-primary-custom btn-lg px-5 py-3 rounded-pill shadow">
+            <i class="fab fa-whatsapp me-2"></i> Falar com o Ateliê
+        </a>
     </div>
 </section>
 
+<!-- Font Awesome (for icons) -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 @endsection
