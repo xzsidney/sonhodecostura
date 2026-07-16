@@ -5,46 +5,47 @@
 @section('content')
 
 <!-- Hero Section -->
-<section class="hero-section text-center d-flex align-items-center justify-content-center" style="min-height: 80vh; background-image: url('https://images.unsplash.com/photo-1629198725805-59eb4f3de584?q=80&w=2000&auto=format&fit=crop'); background-size: cover; background-position: center;">
+<section class="hero-section text-center d-flex align-items-center justify-content-center" style="min-height: 85vh; background-image: url('{{ asset('images/hero_banner.png') }}'); background-size: cover; background-position: center; background-attachment: fixed;">
     <div class="hero-overlay"></div>
     <div class="container position-relative z-1" style="z-index: 2 !important;">
-        <span class="text-mint fw-bold tracking-widest text-uppercase mb-3 d-block">Costura Criativa e Exclusiva</span>
-        <h1 class="display-3 fw-bold text-slate mb-4">Acessórios desenhados<br>especialmente para você.</h1>
-        <p class="lead text-dark mb-5 mx-auto" style="max-width: 600px;">
-            Bolsas, nécessaires e kits maternidade com estruturação premium e bordados personalizados de alto padrão.
-        </p>
-        <a href="#colecao" class="btn btn-primary-custom btn-lg">Explorar Coleção</a>
+        <div class="glass-box mx-auto" style="max-width: 800px;">
+            <span class="text-mint fw-bold tracking-widest text-uppercase mb-3 d-block" style="letter-spacing: 2px;">Costura Criativa e Exclusiva</span>
+            <h1 class="display-4 fw-bold text-slate mb-4">Acessórios desenhados especialmente para você.</h1>
+            <p class="lead text-dark mb-5 mx-auto">
+                Bolsas, nécessaires e kits estruturados com bordados personalizados de alto padrão.
+            </p>
+            <a href="#colecao" class="btn btn-primary-custom btn-lg px-5 py-3">Explorar Coleção</a>
+        </div>
     </div>
 </section>
 
 <!-- About Section -->
-<section class="py-5 bg-light">
+<section class="py-5" style="background-color: var(--color-light);">
     <div class="container py-5">
         <div class="row align-items-center g-5">
             <div class="col-lg-6">
-                <!-- Using a generic placeholder for the brand's work, will be updated by user later -->
-                <div class="rounded-4 overflow-hidden shadow-sm" style="height: 400px; background-color: var(--color-mint);">
-                    <img src="https://images.unsplash.com/photo-1598533781285-11eb855d36c4?q=80&w=800&auto=format&fit=crop" class="w-100 h-100 object-fit-cover" alt="Trabalho Manual">
+                <div class="rounded-4 overflow-hidden shadow-lg position-relative" style="height: 500px;">
+                    <img src="{{ asset('images/hero_banner.png') }}" class="w-100 h-100 object-fit-cover" alt="Nosso Processo de Costura">
                 </div>
             </div>
-            <div class="col-lg-6">
-                <h2 class="font-script fs-1 text-peach mb-3">Feito à mão com amor</h2>
-                <h3 class="fw-bold text-slate mb-4">Atenção em cada detalhe</h3>
-                <p class="text-muted mb-4">
-                    Nossa missão é transformar tecidos e linhas em peças únicas que contam histórias. Desde a escolha cuidadosa dos materiais até o bordado computadorizado impecável, tudo é feito para garantir que você tenha uma peça luxuosa e durável.
+            <div class="col-lg-6 ps-lg-5">
+                <h2 class="font-script display-4 text-peach mb-2">Feito à mão com amor</h2>
+                <h3 class="fw-bold text-slate mb-4 fs-1">Atenção em cada detalhe</h3>
+                <p class="text-muted mb-4 fs-5" style="line-height: 1.8;">
+                    Nossa missão é transformar tecidos e linhas em peças únicas que contam histórias. Desde a escolha cuidadosa dos materiais até o bordado computadorizado impecável, tudo é feito para garantir que você tenha uma peça luxuosa, durável e com a sua identidade.
                 </p>
                 <ul class="list-unstyled mb-0">
-                    <li class="mb-3 d-flex align-items-center">
-                        <span class="bg-peach text-white rounded-circle p-2 me-3 d-inline-flex">✓</span>
-                        <strong>Bordados Computadorizados Precisos</strong>
+                    <li class="mb-3 d-flex align-items-center fs-5">
+                        <span class="bg-peach text-white rounded-circle p-2 me-3 d-inline-flex shadow-sm">✓</span>
+                        <span class="text-slate">Bordados Computadorizados Precisos</span>
                     </li>
-                    <li class="mb-3 d-flex align-items-center">
-                        <span class="bg-peach text-white rounded-circle p-2 me-3 d-inline-flex">✓</span>
-                        <strong>Estruturação Firme e Acabamento Premium</strong>
+                    <li class="mb-3 d-flex align-items-center fs-5">
+                        <span class="bg-peach text-white rounded-circle p-2 me-3 d-inline-flex shadow-sm">✓</span>
+                        <span class="text-slate">Estruturação Firme e Acabamento Premium</span>
                     </li>
-                    <li class="d-flex align-items-center">
-                        <span class="bg-peach text-white rounded-circle p-2 me-3 d-inline-flex">✓</span>
-                        <strong>Personalização de Nomes e Temas</strong>
+                    <li class="d-flex align-items-center fs-5">
+                        <span class="bg-peach text-white rounded-circle p-2 me-3 d-inline-flex shadow-sm">✓</span>
+                        <span class="text-slate">Personalização de Nomes e Temas</span>
                     </li>
                 </ul>
             </div>
@@ -52,53 +53,40 @@
     </div>
 </section>
 
-<!-- Collection Section (Mockup) -->
-<section id="colecao" class="py-5">
+<!-- Collection Section (Vitrine) -->
+<section id="colecao" class="py-5" style="background-color: #fff;">
     <div class="container py-5">
         <div class="text-center mb-5">
-            <h2 class="fw-bold text-slate">Nossa Coleção</h2>
-            <p class="text-muted">Explore algumas de nossas peças mais pedidas.</p>
+            <h2 class="font-script text-peach display-5 mb-0">Nossa Coleção</h2>
+            <h3 class="fw-bold text-slate fs-2">Peças mais pedidas</h3>
+            <p class="text-muted mt-3">Explore o que há de mais luxuoso e exclusivo no ateliê.</p>
         </div>
 
-        <div class="row g-4">
+        <div class="row g-5 justify-content-center">
             <!-- Product 1 -->
-            <div class="col-md-4">
+            <div class="col-md-5 col-lg-4">
                 <div class="product-card card h-100">
-                    <div style="height: 250px; background-color: var(--color-light);">
-                        <img src="https://images.unsplash.com/photo-1544816155-12df9643f363?q=80&w=600&auto=format&fit=crop" class="card-img-top h-100 w-100 object-fit-cover" alt="Bolsa Maternidade">
+                    <div style="height: 300px; background-color: var(--color-light); padding: 10px;">
+                        <img src="{{ asset('images/bag.png') }}" class="card-img-top h-100 w-100 object-fit-cover rounded-3" alt="Bolsa Maternidade">
                     </div>
                     <div class="card-body p-4 text-center">
-                        <h5 class="fw-bold text-slate mb-2">Bolsa Maternidade</h5>
-                        <p class="small text-muted mb-4">Espaçosa, térmica e impermeável. Ideal para o dia a dia da mamãe.</p>
-                        <a href="https://wa.me/5511985497329?text=Olá, tenho interesse em uma Bolsa Maternidade." target="_blank" class="btn btn-outline-slate w-100">Solicitar Orçamento</a>
+                        <h5 class="fw-bold text-slate mb-2 fs-4">Bolsa Maternidade</h5>
+                        <p class="text-muted mb-4">Espaçosa, térmica e estruturada. Ideal para o dia a dia da mamãe com muito luxo.</p>
+                        <a href="https://wa.me/5511985497329?text=Olá, tenho interesse em uma Bolsa Maternidade luxuosa." target="_blank" class="btn btn-outline-slate w-100 py-2">Solicitar Orçamento</a>
                     </div>
                 </div>
             </div>
 
             <!-- Product 2 -->
-            <div class="col-md-4">
+            <div class="col-md-5 col-lg-4">
                 <div class="product-card card h-100">
-                    <div style="height: 250px; background-color: var(--color-light);">
-                        <img src="https://images.unsplash.com/photo-1625841643912-78d10b71cf0e?q=80&w=600&auto=format&fit=crop" class="card-img-top h-100 w-100 object-fit-cover" alt="Nécessaire Personalizada">
+                    <div style="height: 300px; background-color: var(--color-light); padding: 10px;">
+                        <img src="{{ asset('images/necessaire.png') }}" class="card-img-top h-100 w-100 object-fit-cover rounded-3" alt="Nécessaire Personalizada">
                     </div>
                     <div class="card-body p-4 text-center">
-                        <h5 class="fw-bold text-slate mb-2">Nécessaire Personalizada</h5>
-                        <p class="small text-muted mb-4">Bordado exclusivo com nome ou inicial. Perfeita para organizar.</p>
-                        <a href="https://wa.me/5511985497329?text=Olá, tenho interesse em uma Nécessaire Personalizada." target="_blank" class="btn btn-outline-slate w-100">Solicitar Orçamento</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Product 3 -->
-            <div class="col-md-4">
-                <div class="product-card card h-100">
-                    <div style="height: 250px; background-color: var(--color-light);">
-                        <img src="https://images.unsplash.com/photo-1614806687036-7c6407e38fdf?q=80&w=600&auto=format&fit=crop" class="card-img-top h-100 w-100 object-fit-cover" alt="Kit Viagem">
-                    </div>
-                    <div class="card-body p-4 text-center">
-                        <h5 class="fw-bold text-slate mb-2">Toalhas Bordadas</h5>
-                        <p class="small text-muted mb-4">Toalhas macias com barrado rendado e bordados delicados.</p>
-                        <a href="https://wa.me/5511985497329?text=Olá, tenho interesse nas Toalhas Bordadas." target="_blank" class="btn btn-outline-slate w-100">Solicitar Orçamento</a>
+                        <h5 class="fw-bold text-slate mb-2 fs-4">Nécessaire Box</h5>
+                        <p class="text-muted mb-4">Bordado exclusivo com inicial ou nome. Perfeita para organizar e presentear.</p>
+                        <a href="https://wa.me/5511985497329?text=Olá, tenho interesse em uma Nécessaire Box Personalizada." target="_blank" class="btn btn-outline-slate w-100 py-2">Solicitar Orçamento</a>
                     </div>
                 </div>
             </div>
@@ -107,11 +95,14 @@
 </section>
 
 <!-- Call to Action -->
-<section class="py-5 bg-peach text-white text-center">
-    <div class="container py-4">
-        <h2 class="fw-bold mb-3">Pronto para criar o presente perfeito?</h2>
-        <p class="lead mb-4">Fale conosco e comece a desenhar sua peça exclusiva hoje mesmo.</p>
-        <a href="https://wa.me/5511985497329?text=Olá, vim pelo site e gostaria de criar uma peça exclusiva." target="_blank" class="btn btn-light btn-lg text-slate fw-bold rounded-pill px-5">Chamar no WhatsApp</a>
+<section class="py-5 bg-slate text-white text-center position-relative overflow-hidden">
+    <div class="position-absolute w-100 h-100" style="top: 0; left: 0; background-color: var(--color-slate); opacity: 0.9; z-index: 0;"></div>
+    <div class="container py-5 position-relative z-1">
+        <h2 class="font-script text-peach display-4 mb-3">Pronto para criar o presente perfeito?</h2>
+        <p class="lead mb-5 text-light mx-auto" style="max-width: 600px;">
+            Fale conosco diretamente no WhatsApp e comece a desenhar uma peça tão única quanto a pessoa que vai recebê-la.
+        </p>
+        <a href="https://wa.me/5511985497329?text=Olá, vim pelo site e gostaria de criar uma peça exclusiva." target="_blank" class="btn btn-primary-custom btn-lg px-5 shadow-lg">Chamar no WhatsApp</a>
     </div>
 </section>
 
