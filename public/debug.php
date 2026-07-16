@@ -38,7 +38,18 @@ try {
     );
     echo "Laravel Boot: OK<br>";
 } catch (Throwable $e) {
-    echo "<h3>Erro Fatal no Laravel:</h3>";
+    echo "<h3>Erro Secundário no Laravel (O renderizador de erro falhou):</h3>";
     echo "<pre>" . $e->getMessage() . "</pre>";
-    echo "<pre>" . $e->getTraceAsString() . "</pre>";
+    
+    echo "<h3>Lendo o Log Oficial do Laravel para achar o ERRO ORIGINAL:</h3>";
+    $logPath = __DIR__.'/../storage/logs/laravel.log';
+    if(file_exists($logPath)) {
+        $log = file_get_contents($logPath);
+        // Pega os últimos 2000 caracteres para ver o erro mais recente
+        echo "<pre style='background:#333; color:#fff; padding:10px; overflow:auto;'>";
+        echo htmlspecialchars(substr($log, -4000));
+        echo "</pre>";
+    } else {
+        echo "O arquivo laravel.log não existe! Permissões ou caminho errado.";
+    }
 }
