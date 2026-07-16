@@ -31,6 +31,9 @@
                         <a class="nav-link" href="{{ url('/') }}">Início</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" href="{{ route('sobre') }}">Sobre Nós</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="{{ url('/#colecao') }}">Nossa Coleção</a>
                     </li>
                     @guest

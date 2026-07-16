@@ -7,6 +7,8 @@ Route::get('/', function () {
     return view('home');
 });
 
+Route::view('/sobre-nos', 'sobre')->name('sobre');
+
 Route::get('/ping', function () {
     return "pong - Laravel está vivo!";
 });
