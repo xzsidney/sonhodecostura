@@ -36,15 +36,15 @@
                 </p>
                 <ul class="list-unstyled mb-0">
                     <li class="mb-3 d-flex align-items-center fs-5">
-                        <span class="bg-peach text-white rounded-circle p-2 me-3 d-inline-flex shadow-sm">✓</span>
+                        <span class="bg-peach text-white rounded-circle me-3 d-flex align-items-center justify-content-center shadow-sm flex-shrink-0" style="width: 32px; height: 32px;">✓</span>
                         <span class="text-slate">Bordados Computadorizados Precisos</span>
                     </li>
                     <li class="mb-3 d-flex align-items-center fs-5">
-                        <span class="bg-peach text-white rounded-circle p-2 me-3 d-inline-flex shadow-sm">✓</span>
+                        <span class="bg-peach text-white rounded-circle me-3 d-flex align-items-center justify-content-center shadow-sm flex-shrink-0" style="width: 32px; height: 32px;">✓</span>
                         <span class="text-slate">Estruturação Firme e Acabamento Premium</span>
                     </li>
                     <li class="d-flex align-items-center fs-5">
-                        <span class="bg-peach text-white rounded-circle p-2 me-3 d-inline-flex shadow-sm">✓</span>
+                        <span class="bg-peach text-white rounded-circle me-3 d-flex align-items-center justify-content-center shadow-sm flex-shrink-0" style="width: 32px; height: 32px;">✓</span>
                         <span class="text-slate">Personalização de Nomes e Temas</span>
                     </li>
                 </ul>
