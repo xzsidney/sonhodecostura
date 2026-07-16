@@ -134,6 +134,32 @@
 </head>
 <body>
 
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg w-100 z-3 position-absolute" style="background-color: transparent;">
+        <div class="container">
+            <a class="navbar-brand font-script text-slate fs-2" href="{{ url('/') }}" style="text-shadow: 0 1px 3px rgba(255,255,255,0.8);">Sonho de Costura</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav align-items-center gap-3 bg-white bg-lg-transparent p-3 p-lg-0 rounded shadow-sm shadow-lg-none mt-2 mt-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url('/') }}">Início</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('sobre') }}">Sobre Nós</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url('/#colecao') }}">Nossa Coleção</a>
+                    </li>
+                    <li class="nav-item ms-lg-3">
+                        <a class="btn btn-primary-custom rounded-pill px-4" href="https://wa.me/5511985497329" target="_blank">Faça seu Orçamento</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
     <div class="auth-split-container">
         
         <!-- Left Side: Image & Branding -->

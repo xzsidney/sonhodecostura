@@ -59,9 +59,9 @@
         <!-- Feature Cards -->
         <div class="row g-4 mt-5 pt-4">
             <div class="col-md-6">
-                <div class="card h-100 border p-4 rounded-4" style="border-color: #F2E3E0 !important; box-shadow: 0 5px 15px rgba(0,0,0,0.02);">
-                    <div class="mb-3 d-inline-flex align-items-center justify-content-center border rounded-3" style="width: 48px; height: 48px; border-color: #E0E0E0 !important;">
-                        <i class="fas fa-book-open text-muted"></i>
+                <div class="card h-100 p-4 rounded-4" style="border: none; border-top: 3px solid #B2CBAA !important; box-shadow: 0 10px 30px rgba(0,0,0,0.04);">
+                    <div class="mb-3 d-inline-flex align-items-center justify-content-center rounded-3" style="width: 48px; height: 48px; background-color: #F1F6F0;">
+                        <i class="fas fa-book-open" style="color: #768F6C;"></i>
                     </div>
                     <h5 class="fw-bold text-slate mb-3">Especialidade</h5>
                     <p class="text-muted small mb-0" style="line-height: 1.6;">
@@ -70,9 +70,9 @@
                 </div>
             </div>
             <div class="col-md-6">
-                <div class="card h-100 border p-4 rounded-4" style="border-color: #F2E3E0 !important; box-shadow: 0 5px 15px rgba(0,0,0,0.02);">
-                    <div class="mb-3 d-inline-flex align-items-center justify-content-center border rounded-3" style="width: 48px; height: 48px; border-color: #E0E0E0 !important;">
-                        <i class="fas fa-shield-alt text-muted"></i>
+                <div class="card h-100 p-4 rounded-4" style="border: none; border-top: 3px solid #E5C3BC !important; box-shadow: 0 10px 30px rgba(0,0,0,0.04);">
+                    <div class="mb-3 d-inline-flex align-items-center justify-content-center rounded-3" style="width: 48px; height: 48px; background-color: #FDF3F1;">
+                        <i class="fas fa-shield-alt" style="color: #B68A81;"></i>
                     </div>
                     <h5 class="fw-bold text-slate mb-3">Padrão Premium</h5>
                     <p class="text-muted small mb-0" style="line-height: 1.6;">

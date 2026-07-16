@@ -59,7 +59,7 @@
     </main>
 
     <!-- Footer -->
-    <footer class="bg-slate text-white py-5 mt-5">
+    <footer class="bg-slate text-white py-5">
         <div class="container">
             <div class="row g-4">
                 <div class="col-md-6">
